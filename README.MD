@@ -1,3 +1,11 @@
+### My Setup
+
+1. Rename folder to 2.5.0_0
+2. Move folder to /home/USERNAME/.config/google-chrome/Default/Extensions/kcnhkahnjcbndmmehfkdnkjomaanaooo/
+3. Go to google extensions and "load unpacked" inside the 2.5.0_0 directory
+3. Go to options and choose "Never show popup (Go straight to website)"
+
+___
 
 # Google Voice Chrome Extension Redesign
 

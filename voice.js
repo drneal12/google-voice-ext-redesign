@@ -150,21 +150,25 @@ gc.showLoggedOut = function() {
 gc.goToInbox = function(opt_uri) {
   var uri = !!opt_uri ? opt_uri : '';
 
-  chrome.tabs.getAllInWindow(null, function(tabs) {
-    for (var i = 0; i < tabs.length; i++) {
-      var tab = tabs[i];
-      if (goog.string.contains(tab['url'], gc.MOYA_URL)) {
-        chrome.tabs.update(tab['id'], {
-          'url': gc.getUrl(false, uri),
-          'selected': true
-        });
-        return;
-      }
-    }
-
-    chrome.tabs.create({'url': gc.getUrl(false, uri)});
-  });
-};
+   chrome.tabs.query({'url': gc.MOYA_URL + '/*'}, function(tabs) {
+     if (tabs.length != 0) {
+       var tab = tabs[0]
+       if (goog.string.contains(tab['url'], gc.MOYA_URL)) {
+         chrome.tabs.update(tab['id'], {'selected': true
+         });
+         chrome.windows.update(tab['windowId'], {'focused': true});
+         return;
+       }
+     } else {
+       chrome.windows.create({
+         'url': gc.getUrl(false, uri),
+         'width': 768,
+         'height': 512,
+         'type': "popup"
+       });
+     }
+   });
+  };
 
 /**
  * Load general user data like contacts and subscriber info.

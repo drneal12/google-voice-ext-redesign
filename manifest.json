@@ -28,6 +28,7 @@
   "icons": {
     "128": "voice-128.png"
   },
+  "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC24DwTADOEhDU9r6R1gJB/QJ9JrPzQAZ3aMvXUXo4DeCkQHJeqbA/GZLFzGGPHedqlalp7Bk6lubj2/qKO0Nd+hMefSg71W99/Jp3EIPRxyZ/vhzlMuEog7r2WhNTmgG9+++zqYEvxCdUVXHTwisIRWdFLocuxgxcIV9tDAMK1DwIDAQAB",
   "permissions": [
     "alarms",
     "tabs",
